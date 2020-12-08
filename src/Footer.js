@@ -6,7 +6,7 @@ const Footer = () => {
     return (
       <div className="Footer">
   
-            <h1>safari sharing footer comps</h1>
+            <h1></h1>
             
       </div>
     );
