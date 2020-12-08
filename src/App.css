@@ -1,8 +1,62 @@
+
+
+
+
 .App {
-  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height : 100%;
+  /* background-color: rgb(238, 184, 113); */
+
 }
 
-.App-logo {
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+    segoe ui, arial, sans-serif;
+  background: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+#root {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.simple-trans-main > div {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: 800;
+  will-change: transform, opacity;
+  text-shadow: 0px 2px 40px #00000020, 0px 2px 5px #00000030;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -11,9 +65,9 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
+} */
 
-.App-header {
+/* .App-header {
   background-color: #039139df;
   min-height: 100vh;
   display: flex;
@@ -22,7 +76,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -36,3 +90,147 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+/* profile page css________________________________________________________________________________________ */
+.bg-light {
+  position: relative;
+  top: -18rem;
+}
+
+.fb-profile img.fb-image-lg{
+    z-index: 0;
+    width: 100%;  
+    margin-bottom: 10px;
+}
+
+.fb-image-profile
+{
+    margin: -90px 10px 0px 50px;
+    z-index: 9;
+    width: 200px; 
+    position: relative;
+    top: -17rem;
+    margin: 2em;
+    height: 200px;
+    border-radius: 50%;
+    border: 4px solid #999292;
+}
+.container { 
+  padding : 0;
+  margin: 0; 
+}
+.row {
+  margin-right: -15px; 
+  margin-left: -15px;
+}
+#profile-page-content-wrap {
+position: absolute;
+top: 18rem;
+left: 0.1rem;
+height: 600px;
+background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c)
+}
+.sideWrap {
+  position: relative;
+  background: aliceblue;
+}
+.contentWrap  {
+  display: flex;
+  width: 80%;
+  left: 100rem;
+  margin-left: 9rem;
+  padding: 1rem;  
+}
+.card-header{
+  position: absolute;
+  background: aliceblue;
+}
+
+.share-match {
+  font-size: 16px;
+  color: #000;
+  font-weight: 20;
+}
+.shared-safaris-by-others {
+  font-size: 17px;
+  color: #000;
+  font-weight: 20;
+  padding: 1em;
+  border-radius: .4rem;
+  position: relative;
+  top: -1em;
+  background: aliceblue;
+
+}
+.sideWrap {
+  padding: 1rem;
+  border-radius: .4rem;
+}
+/* #shared-safaris-by-others {
+  padding: 1rem;
+  border-radius: 4rem;
+  padding: 1rem;
+
+} */
+.btn-shared-safaris-by-others {
+  background: #abc;
+  position: relative;
+  margin: 1em;
+}
+.btn-primary {
+  background: #abc;
+    position: relative;
+  margin: .3em;
+}
+.min-nav {
+  position: absolute;
+  left: 81rem;
+  top: -16.5rem;
+  z-index: 0;
+}
+
+#logout-box {
+  background: #b6b38ec9;
+    position: relative;
+  /* margin: .3em; */
+}
+
+
+@media (max-width:768px)
+{
+    
+.fb-profile-text>h1{
+    font-weight: 700;
+    font-size:16px;
+}
+
+.fb-image-profile
+{
+    margin: -45px 10px 0px 25px;
+    z-index: 1;
+    width: 20%; 
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

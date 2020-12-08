@@ -1,0 +1,7 @@
+http://localhost:8000/api/user/create
+http://localhost:8000/api/user/addToWishlist/BEN
+
+
+{
+    "username": "felixe", "name": "tedy", "email": "tedy@gmail.com", "profile": "pic", "hashed_password": "fjeöjfpej"
+}
