@@ -74,7 +74,7 @@ const pages = [
       { ...style, background: 'radial-gradient(black, transparent)' }
         }>
         {/* <AddCountryForm/> */}
-          <SignUpPage/>
+          {/* <SignUpPage/> */}
         </animated.div>,
   ({ style }) => <animated.div style={
        { ...style, background: 'radial-gradient(black, transparent)' 
@@ -108,9 +108,7 @@ const pages = [
 const  AddCountryPage = ()  => { 
       const classes = useStyles();
 
-
-
-      const getNextPage = () => { 
+       const getNextPage = () => { 
                  return console.log('going next')
        }
        const prevPage = getNextPage();
@@ -136,7 +134,7 @@ const  AddCountryPage = ()  => {
                               return <Page key={key} style={props} />
                               })}
                             </div>
-                         <Paper className={classes.buttonNextWrapCountry}>
+                          <Paper className={classes.buttonNextWrapCountry}>
 
                           <ButtonGroup  variant="text" color="primary" aria-label="text primary button group" >
                             <Button onClick={prevPage} className={classes.buttonLeftWrap}>

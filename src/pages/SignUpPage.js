@@ -12,7 +12,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import SignupComponent from '../components/SignUpComponent';
 
+
 const Copyright =  () => {
+  
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
@@ -37,10 +39,11 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
   },
   
- 
 }));
 
-const SignUpPage = ()  =>{
+const SignUpPage = ({setUser, setToken})  =>{
+
+
   const classes = useStyles();
 
   return (
@@ -52,10 +55,8 @@ const SignUpPage = ()  =>{
         <Typography component="h1" variant="h5">
           Safari Sharing App
         </Typography>
-
-               <SignupComponent/>
-      </div>
-      <Box mt={5}>
+             <SignupComponent  setUser={setUser} setToken={setToken}/></div>
+         <Box mt={5}>
         <Copyright />
       </Box>
     </Container>

@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 
-const SignupComponent = () => {
+const SignupComponent = ({setUser, setToken}) => {
 
     const classes = useStyles();
 
@@ -60,9 +60,13 @@ const SignupComponent = () => {
 //                                                                                              create new user and if user is created .then() pass data to resetValues to clear strings in the form
                 const user = {name, email, password:hashed_password, profile};
 
- 
                 signup(user)
-              
+                .then(({token, user})=> {
+                  localStorage.setItem('token', token);
+                  setUser(user);
+                  setToken(token);
+                })
+
               }
 
 

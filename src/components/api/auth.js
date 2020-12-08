@@ -24,7 +24,7 @@ export const signup = user => {
 
 
 // export const signin = user => {
-//     return fetch(`${ }/signin`, {
+//     return fetch(`/signin`, {
 //         method: 'POST',
 //         headers: {
 //             Accept: 'application/json',

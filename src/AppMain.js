@@ -21,18 +21,31 @@ const  AppMain = () => {
 
      
 	const [country, setCountry] = useState([]);
-	console.log("hi")
+	const [token, setToken] = useState();
+	const [user, setUser] = useState();
+	const [loading, setLoading] = useState(false);
+	const [activity, setActivity] = useState([]);
+
+
+	useEffect(()=>{
+        console.log("hi")
+	    fetch('http://localhost:8000/api/countries/getAll')
+	     .then(res => res.json())
+	     .then(data => setCountry(data))
+	     .then(data => console.log(data))
+
+	 }, [ ]);
+	console.log(country)
+
 
 	useEffect(()=>{
         console.log("hi")
 	    fetch('http://localhost:8000/api/countries/getAll')
 	   .then(res => res.json())
 	//    .then(data => setCountry(data))
-	    .then(data => console.log(data))
 
 	 }, [ ]);
 
-	console.log(country)
 
 // 	 const [activities, setActivities] = useState([]);
 
@@ -71,10 +84,7 @@ const  AppMain = () => {
 						<SignOut/>
 					)}
 				/>
-				<Route
-					path="/signup"
-					render={(props) => <SignUpPage countries={country} {...props}/>} 
-				/>
+
 				<Route
 					path="/share-safari"
 					render={(props) => <SharedSafaris countries={country} {...props}/> }
@@ -93,7 +103,7 @@ const  AppMain = () => {
 					path="/country/:id" render={(props) => <AddActivityForm  countries={country} {...props}/> }
 				/> 
 				<Route 
-				   path="/" render={(props) => <AddCountryPage countries={country} {...props}/>  }
+				   path="/" render={(props) => <SignUpPage setUser={setUser}  setToken={setToken} {...props}/>  }
 				/>
 			</Switch>
 		</div>
