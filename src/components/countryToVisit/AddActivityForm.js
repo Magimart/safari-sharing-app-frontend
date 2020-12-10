@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   addActivityWrapper: {
-  
+
     width: '40%',
     position: 'relative',
     left: '26%',
@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '8px',
     background: 'radial-gradient(#2b4911, transparent)',
     boxShadow: '0px 15px 10px -15px #111',
-    
+
   },
-    addActivityWrapper0 :{
+  addActivityWrapper0: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
     width: '40%',
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#174317bf'
   },
 
-  AddButtonWrapper : {
+  AddButtonWrapper: {
     // background: 'radial-gradient(black, transparent)',
     background: 'radial-gradient(#28971485, transparent)',
     position: 'relative',
@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     alignItems: 'center',
     display: 'flex',
-    justifyContent: 'center', 
+    justifyContent: 'center',
     width: '200px',
     left: '40%',
     right: 'auto',
@@ -77,9 +77,13 @@ const WhiteTextTypography = withStyles({
   }
 })(Typography);
 
-const AddActivityForm = () => {
+const AddActivityForm = (props) => {
 
   const classes = useStyles();
+
+  const handleClick = () => {
+    nextPage();
+  }
 
   return (
     <>
@@ -87,7 +91,7 @@ const AddActivityForm = () => {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Paper className={classes.addActivityWrapper}>
-              <Select  className={classes.addActivityWrapper0}
+              <Select className={classes.addActivityWrapper0}
                 defaultValue={[activityOptions[2], activityOptions[3]]}
                 isMulti
                 name="colors"
@@ -98,11 +102,11 @@ const AddActivityForm = () => {
               />
             </Paper>
             <Paper className={classes.AddButtonWrapper}>
-               <Button variant="outlined" size="large" color="#fff" >
-                 <WhiteTextTypography>
-                     select your activities
+              <Button onClick={handleClick} variant="outlined" size="large" color="#fff" >
+                <WhiteTextTypography>
+                  select your activities
                  </WhiteTextTypography>
-                </Button>
+              </Button>
             </Paper>
           </Grid>
         </Grid>

@@ -91,10 +91,6 @@ const CreateSafari = () => {
   
        const classes = useStyles();
 
-
-
-
-
     return (
 
       <>

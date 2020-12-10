@@ -20,7 +20,7 @@ import SharedSafaris from './pages/SharedSafaris';
 const  AppMain = () => {
 
      
-	const [country, setCountry] = useState([]);
+	const [countries, setCountries] = useState([]);
 	const [token, setToken] = useState();
 	const [user, setUser] = useState();
 	const [loading, setLoading] = useState(false);
@@ -28,21 +28,24 @@ const  AppMain = () => {
 
 
 	useEffect(()=>{
-        console.log("hi")
+        
 	    fetch('http://localhost:8000/api/countries/getAll')
 	     .then(res => res.json())
-	     .then(data => setCountry(data))
-	     .then(data => console.log(data))
+	     .then(data => {
+				 setCountries(data); 
+				 console.log(data);
+			 })
+	    .catch(e => console.log(e))
 
 	 }, [ ]);
-	console.log(country)
+	console.log(countries)
 
 
 	useEffect(()=>{
         console.log("hi")
 	    fetch('http://localhost:8000/api/countries/getAll')
 	   .then(res => res.json())
-	//    .then(data => setCountry(data))
+	    // .then(data => setCountry(data))
 
 	 }, [ ]);
 
@@ -84,26 +87,29 @@ const  AppMain = () => {
 						<SignOut/>
 					)}
 				/>
+				<Route 
+				   path="/singup" render={(props) => <SignUpPage setUser={setUser}  setToken={setToken} {...props}/>  }
+				/>
 
 				<Route
 					path="/share-safari"
-					render={(props) => <SharedSafaris countries={country} {...props}/> }
+					render={(props) => <SharedSafaris countries={countries} {...props}/> }
 				/>
 				<Route
 					path="/create-safari"
-					render={(props) => <CreateSafari countries={country} {...props}/> }
+					render={(props) => <CreateSafari countries={countries} {...props}/> }
 				/>
-				
 				{/* <Route
 					path="/activity"
 					render={(props) => <AddActivitypage countries={country} {...props}/> }
 				/> */}
+
 			
 				<Route
-					path="/country/:id" render={(props) => <AddActivityForm  countries={country} {...props}/> }
+					path="/country/:id" render={(props) => <AddActivityForm  countries={countries} {...props}/> }
 				/> 
 				<Route 
-				   path="/" render={(props) => <SignUpPage setUser={setUser}  setToken={setToken} {...props}/>  }
+				   path="/" render={(props) => <AddCountryPage countries={countries} {...props}/>  }
 				/>
 			</Switch>
 		</div>
@@ -113,6 +119,14 @@ const  AppMain = () => {
 
 }
 export default AppMain;
+
+
+
+
+
+
+
+
 
 
 
